@@ -138,8 +138,8 @@ find_library(GMPXX_LIBRARIES NAMES gmpxx libgmpxx)
 include(FindPkgConfig)
 # Manually specify OpenSSL libraries for WebAssembly build
 set(OPENSSL_INCLUDE_DIR "/usr/local/include")
-set(OPENSSL_CRYPTO_LIBRARY "/usr/lib/x86_64-linux-gnu/libcrypto.a")
-set(OPENSSL_SSL_LIBRARY "/usr/lib/x86_64-linux-gnu/libssl.a")
+set(OPENSSL_CRYPTO_LIBRARY "/usr/local/lib/libcrypto.a")
+set(OPENSSL_SSL_LIBRARY "/usr/local/lib/libssl.a")
 
 if("${WITH_PROCPS}")
   pkg_check_modules(

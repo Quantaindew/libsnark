@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y build-essential cmake git python3-markd
 RUN git clone https://github.com/jedisct1/openssl-wasm.git && \
     mkdir -p /usr/local/include/openssl && \
     cp -r openssl-wasm/precompiled/include/openssl /usr/local/include && \
-    cp openssl-wasm/precompiled/lib/*.a /usr/lib/x86_64-linux-gnu/
+    cp openssl-wasm/precompiled/lib/*.a /usr/local/lib/
 
 
 #RUN ls /usr/local/include/openssl && ls /usr/lib/x86_64-linux-gnu/ 
