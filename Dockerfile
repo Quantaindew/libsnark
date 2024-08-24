@@ -32,7 +32,7 @@ RUN git clone https://github.com/jedisct1/openssl-wasm.git && \
 #     emmake make && emmake make install
 
 # Clone and build libsnark
-RUN git clone https://github.com/Quantaindew/libsnark-wasm/ && cd libsnark && \
+RUN git clone https://github.com/Quantaindew/libsnark-wasm/ && cd libsnark-wasm && \
     git checkout wasm-backed && git submodule init && git submodule update && \
     mkdir build && cd build && \
     emcmake cmake .. \
