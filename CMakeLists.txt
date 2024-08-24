@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 2.8)
 
 project (libsnark)
 
+set(CMAKE_C_COMPILER emcc)
+set(CMAKE_CXX_COMPILER em++)
+
+set(WITH_PROCPS OFF CACHE BOOL "Disable procps" FORCE)
+set(WITH_SUPERCOP OFF CACHE BOOL "Disable SUPERCOP" FORCE)
+
 set(
   CURVE
   "BN128"
@@ -130,12 +136,10 @@ find_library(GMP_LIBRARIES NAMES gmp libgmp)
 find_library(GMPXX_LIBRARIES NAMES gmpxx libgmpxx)
 
 include(FindPkgConfig)
-pkg_check_modules(
-  CRYPTO
-  REQUIRED
-
-  libcrypto
-)
+# Manually specify OpenSSL libraries for WebAssembly build
+set(OPENSSL_INCLUDE_DIR "/usr/local/include")
+set(OPENSSL_CRYPTO_LIBRARY "/usr/local/lib/libcrypto.a")
+set(OPENSSL_SSL_LIBRARY "/usr/local/lib/libssl.a")
 
 if("${WITH_PROCPS}")
   pkg_check_modules(

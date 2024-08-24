@@ -29,7 +29,7 @@ if("${WITH_SUPERCOP}")
   target_link_libraries(
     snark_supercop
 
-    ${CRYPTO_LIBRARIES}
+    ${OPENSSL_CRYPTO_LIBRARY}
   )
 endif()
 
