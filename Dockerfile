@@ -33,7 +33,7 @@ RUN git clone https://github.com/jedisct1/openssl-wasm.git && \
 
 # Clone and build libsnark
 RUN git clone https://github.com/Quantaindew/libsnark-wasm/ && cd libsnark-wasm && \
-    git checkout wasm-backed && git submodule init && git submodule update && \
+    git checkout wasm-backend && git submodule init && git submodule update && \
     mkdir build && cd build && \
     emcmake cmake .. \
       -DCMAKE_INSTALL_PREFIX=/usr/local \
