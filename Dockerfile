@@ -14,7 +14,7 @@ RUN git clone https://github.com/jedisct1/openssl-wasm.git && \
     cp openssl-wasm/precompiled/lib/*.a /usr/lib/x86_64-linux-gnu/
 
 
-RUN ls /usr/local/include/openssl && ls /usr/lib/x86_64-linux-gnu/ 
+#RUN ls /usr/local/include/openssl && ls /usr/lib/x86_64-linux-gnu/ 
 # # Build and install GMP for WebAssembly
 # RUN git clone https://github.com/alisw/GMP.git && cd GMP && \
 #     emconfigure ./configure --disable-assembly --host none --enable-static --disable-shared && \
@@ -32,8 +32,8 @@ RUN ls /usr/local/include/openssl && ls /usr/lib/x86_64-linux-gnu/
 #     emmake make && emmake make install
 
 # Clone and build libsnark
-RUN git clone https://github.com/scipr-lab/libsnark/ && cd libsnark && \
-    git submodule init && git submodule update && \
+RUN git clone https://github.com/Quantaindew/libsnark-wasm/ && cd libsnark && \
+    git checkout wasm-backed && git submodule init && git submodule update && \
     mkdir build && cd build && \
     emcmake cmake .. \
       -DCMAKE_INSTALL_PREFIX=/usr/local \
