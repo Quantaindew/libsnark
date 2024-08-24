@@ -51,4 +51,4 @@ RUN git clone https://github.com/Quantaindew/libsnark-wasm/ && cd libsnark-wasm 
     emmake make && \
     emmake make install
 
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+#ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
